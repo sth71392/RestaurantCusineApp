@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">RestaurantCusineApp</string>
+
+    <string-array name="cuisines">
+        <item>Chinese</item>
+        <item>Mexican</item>
+        <item>Thai</item>
+        <item>Vietnamese</item>
+        <item>American</item>
+    </string-array>
 </resources>
