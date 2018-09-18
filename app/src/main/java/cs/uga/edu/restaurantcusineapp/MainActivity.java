@@ -65,5 +65,5 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         intent.putExtra("cuisine", cuisineType);
         startActivity(intent);
     }
-    //something here
+    
 }
