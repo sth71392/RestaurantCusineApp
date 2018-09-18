@@ -18,6 +18,17 @@ public class ActivityTwo extends AppCompatActivity {
         Intent intent = getIntent();
         cuisineType = intent.getStringExtra("cuisine");
         cuisineInfo = (TextView) findViewById(R.id.cuisineInfo);
-        cuisineInfo.setText(cuisineType);
+        if(cuisineType.equals("Chinese")){
+            cuisineInfo.setText(getResources().getString(R.string.chineseInfo));
+        }else if(cuisineType.equals("Mexican")){
+            cuisineInfo.setText(getResources().getString(R.string.mexicanInfo));
+        }else if(cuisineType.equals("Thai")){
+            cuisineInfo.setText(getResources().getString(R.string.thaiInfo));
+        }else if(cuisineType.equals("Japanese")){
+            cuisineInfo.setText(getResources().getString(R.string.japaneseInfo));
+        }else if(cuisineType.equals("American")){
+            cuisineInfo.setText(getResources().getString(R.string.americanInfo));
+        }
+
     }
 }

@@ -13,8 +13,8 @@ import android.widget.Spinner;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private Button cuisineInfo;
+    private Button restaurants;
     private String cuisineType;
-    private String restaurants;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 openActivityTwo();
             }
         });
+
+        restaurants = (Button) findViewById(R.id.restaurants);
+        restaurants.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivityThree();
+            }
+        });
     }
 
     @Override
@@ -48,6 +56,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void openActivityTwo(){
         Intent intent = new Intent(this, ActivityTwo.class);
+        intent.putExtra("cuisine", cuisineType);
+        startActivity(intent);
+    }
+
+    public void openActivityThree(){
+        Intent intent = new Intent(this, ActivityThree.class);
         intent.putExtra("cuisine", cuisineType);
         startActivity(intent);
     }
