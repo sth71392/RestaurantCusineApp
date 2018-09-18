@@ -22,6 +22,7 @@ public class ActivityThree extends AppCompatActivity {
         cuisineType = intent.getStringExtra("cuisine");
         restaurantInfo = (TextView) findViewById(R.id.restaurants);
 
+        //setting up info of cuisine restaurants based on data (cuisine choice) received from activity one
         if(cuisineType.equals("Chinese")){
             restaurantInfo.setText(getResources().getString(R.string.chineseRestaurants));
         }else if(cuisineType.equals("Mexican")){
@@ -34,6 +35,7 @@ public class ActivityThree extends AppCompatActivity {
             restaurantInfo.setText(getResources().getString(R.string.americanRestaurants));
         }
 
+        //back botton to return to activity one
         backRestaurants = (Button) findViewById(R.id.backRestaurants);
         backRestaurants.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,9 +43,9 @@ public class ActivityThree extends AppCompatActivity {
                 openActivityOne();
             }
         });
-
     }
 
+    //method for intent and starting activity
     public void openActivityOne(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

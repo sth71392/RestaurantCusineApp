@@ -24,6 +24,10 @@ public class ActivityTwo extends AppCompatActivity {
         cuisineType = intent.getStringExtra("cuisine");
         cuisineInfo = (TextView) findViewById(R.id.cuisineInfo);
         cuisineImage = (ImageView) findViewById(R.id.cuisineImage);
+
+        //setting up cuisine info based on data (cuisine choice) sent from first activity
+        //also hard-coded some layout height values because of images being placed in weird places after using scrollview
+        //added images for cuisine choices as well
         if(cuisineType.equals("Chinese")){
             cuisineInfo.setText(getResources().getString(R.string.chineseInfo));
             cuisineInfo.getLayoutParams().height = 6700;
@@ -47,6 +51,7 @@ public class ActivityTwo extends AppCompatActivity {
             cuisineImage.setImageDrawable(getResources().getDrawable(R.drawable.american));
         }
 
+        //back button for opening activity one or returning to it
         backCuisine = (Button) findViewById(R.id.backCuisine);
         backCuisine.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +62,7 @@ public class ActivityTwo extends AppCompatActivity {
 
     }
 
+    //method to for intent and starting activity
     public void openActivityOne(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
